@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Use bootstrap library and set the tab title  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<!-- All information on the web page -->
+<body>
+    
+    <div class="container">
+        <!-- The top frame of the page, containing the main title and the button for the scraping action -->
+        <div class="jumbotron text-center" style="background-color: rgb(192, 177, 177)">
+            <h2 style="text-align: center; color:rgb(88, 124, 88)"><strong> Mission to Mars </strong></h2>
+            <p style="text-align: center;"><a class="btn btn-primary btn-sm" style="background-color: rgb(88, 124, 88)" href="/scrape" role="button"><strong>Scrape Mars Data</strong></a></p>
+        </div>
+
+        <!-- The top of central frame of the page, containing Mars Latest News, -->
+        <div class="container-fluid" style="background-color: rgb(192, 177, 177)">
+            <div class="row">                
+                <div class="col-md-12" ">
+                    <!-- style="border-style:solid;border-color:rgb(88, 124, 88);border-width:2px; -->
+                    <h3 style="color: rgb(88, 124, 88)"><strong>Mars Latest News</strong></h3>
+                    <h5><strong>{{mars_news_data.news_title}}</strong></h5>
+                    <p><em>{{mars_news_data.news_text}}</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The middle of cenral frame of the page: Featured Mars Image, Mars Weather, Mars Facts table   -->
+
+        <div class="container-fluid" style="background-color: rgb(192, 177, 177)">
+            <div class="row">
+                
+                <!-- Featured Mars Image  -->
+                <div class="col-md-8">
+                    <h3 style="color: rgb(88, 124, 88)"><strong>Featured Mars Image</strong></h3>
+                    <img src="{{mars_news_data.featured_image_url}}" class="img-thumbnail">
+                </div>
+
+                <div class="col-md-4">
+                    <div class="row"> 
+                        <!-- Mars Weather  -->
+                        <div class="col-md-12" style="border-style:solid;border-color:rgb(88, 124, 88);border-width:2px;border-radius:2px">
+                            <h3 style="color: rgb(88, 124, 88)"><strong>Latest Mars Weather Tweet</strong></h3>
+                            <p style="text-align: justify">{{mars_news_data.mars_weather}}</p>
+                        </div>
+                        <div class="col-md-12"></div>
+            
+                        <!-- Mars Facts table  -->
+                        <div class="col-md-12">
+                                <h3 style="color: rgb(88, 124, 88)"><strong>Mars Facts</strong></h3>
+                                <p style="border-style:solid;border-color:rgb(88, 124, 88);border-width:2px;border-radius:2px">{{mars_news_data.mars_facts | safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>     
+        </div>
+
+        <!-- 4 Mars Hemispehere Images with their titles -->
+
+        <div class="container-fluid text-center" style="border: 5px solid rgb(192, 177, 177);background-color: rgb(192, 177, 177)">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color: rgb(88, 124, 88)"><strong>Mars Hemispheres</strong></h3>
+                </div>
+                <br>
+            </div>
+
+            <div class="row" style="margin: auto;">
+
+                <div class="col-md-6">
+                    <img src="{{mars_news_data.hem_image_urls[0]['image_url']}}" class="img-thumbnail">
+                    <h4 style="color: rgb(88, 124, 88)"><strong> {{mars_news_data.hem_image_urls[0]['title']}}</strong></h4>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="{{mars_news_data.hem_image_urls[1]['image_url']}}" class="img-thumbnail">
+                    <h4 style="color: rgb(88, 124, 88)"><strong> {{mars_news_data.hem_image_urls[1]['title']}}</strong></h4>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="{{mars_news_data.hem_image_urls[2]['image_url']}}" class="img-thumbnail">
+                    <h4 style="color: rgb(88, 124, 88)"><strong> {{mars_news_data.hem_image_urls[2]['title']}}</strong></h4>
+                </div>
+        
+                <div class="col-md-6">
+                    <img src="{{mars_news_data.hem_image_urls[3]['image_url']}}" class="img-thumbnail">
+                    <h4 style="color: rgb(88, 124, 88)"><strong> {{mars_news_data.hem_image_urls[3]['title']}}</strong></h4>
+                </div>
+
+            </div>
+        </div>
+    </div>  <!-- container -->
+            
+</body>
+
+</html>
