@@ -5,23 +5,13 @@ import time
 # Import my mars web scraping python script
 import scrape_mars
 
-# # to overrun heroku problems
-from flask_cors import CORS, cross_origin
-
 # Create application with Flask
 app = Flask(__name__)
 
-# to overrun heroku problems
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
-
 # Set up mongo connection with PyMongo
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
-
-# app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-#uncomment# app.config["MONGO_URI"] = "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-
 mongo = PyMongo(app)
+
 
 ### Main - Landing Page - index.html
 @app.route("/")
