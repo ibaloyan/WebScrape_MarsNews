@@ -80,19 +80,21 @@ def get_featured_space_image(browser):
     # URL of NASA Mars site, JPL Featured Space Images page to be scraped
     mar_space_images_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(mar_space_images_url)
+    time.sleep(1)
 
     # Find and Click "FULL IMAGE" button
     full_image_data = browser.find_by_id('full_image')
     full_image_data.click()
+    time.sleep(1)
 
     # Find and Click 'more info' button, wait a second
     ### browser.is_element_present_by_text('more info',wait_time=1)
-    time.sleep(1)
+   
     more_info_data = browser.find_link_by_partial_text('more info')
     more_info_data.click()
+    time.sleep(1)
 
     # Get HTML page with the browser; create BeautifulSoup object; parse with 'html.parser'
-    time.sleep(1)
     mars_images_html = browser.html
     mars_images_data = BeautifulSoup(mars_images_html, 'html.parser')
 
@@ -120,6 +122,7 @@ def get_mars_weather(browser):
     # URL of Mars Weather twitter page to be scraped
     mars_twitter_weather_url = 'https://twitter.com/marswxreport?lang=en)'
     browser.visit(mars_twitter_weather_url)
+    time.sleep(1)
 
     # Get HTML page with the browser; create BeautifulSoup object; parse with 'html.parser'
     mars_weather_html = browser.html
@@ -159,6 +162,7 @@ def get_hemisphere_urls(browser):
     # URL of USGS Astrogeology site
     usgs_astrogeology_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(usgs_astrogeology_url)
+    time.sleep(1)
 
     # Initialize the list for the dictionary of hemisphere images 
     hemisphere_image_urls = []
@@ -207,8 +211,6 @@ def get_hemisphere_urls(browser):
         browser.back()
 
     return hemisphere_image_urls
-
-
 
 if __name__ == "__main__":
     
