@@ -3,9 +3,11 @@ Web scrapes data from Mars News related websites, loads the data into mongo db a
 
 # Mission to Mars
 
-![Mars Latest News](MarsNews.PNG)
+<!-- ![Mars Latest News](MarsNews.PNG)
 
-![Mars Hemispheres](MarsHemispheres.PNG)
+![Mars Hemispheres](MarsHemispheres.PNG) -->
+
+![Mars Latest News](MissiontoMars1121.HTML)
 
 1. Technology Stack - HTML, CSS, BootStrap, Jupyter, Python 
 
