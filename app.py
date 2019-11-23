@@ -25,15 +25,6 @@ app.config["MONGO_URI"] = "mongodb://ibaloyan:Francis99$@ds155616.mlab.com:55616
 mongo = PyMongo(app)
 # print(mongo)
 
-### Main - Landing Page - index.html
-@app.route("/")
-def index():
-    
-    # Get mars_news_data documents from database mars_db ( or heroku_8mh5bx8l ), collection mars_data
-    mars_news_data = mongo.db.mars_data.find_one()
-    #for MongoClient# mars_news_data = db.mars_data.find_one()
-    
-    return render_template("index.html", mars_news_data=mars_news_data)
 
 ### Scrape route that will execute mars_scrape functions
 @app.route("/scrape")
@@ -53,6 +44,17 @@ def scrape_all_sites():
     
     ###return "Scraping was successful."
 
+
+### Main - Landing Page - index.html
+@app.route("/")
+def index():
+    
+    # Get mars_news_data documents from database mars_db ( or heroku_8mh5bx8l ), collection mars_data
+    mars_news_data = mongo.db.mars_data.find_one()
+    #for MongoClient# mars_news_data = db.mars_data.find_one()
+    
+    return render_template("index.html", mars_news_data=mars_news_data)
+    
 if __name__ == "__main__":
     ##print (scrape_mars.scrape_all_sites())
     time.sleep(10)
