@@ -22,9 +22,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 ###app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
 app.config["MONGO_URI"] = "mongodb://ibaloyan:Francis99$@ds155616.mlab.com:55616/heroku_8mh5bx8l"
 
-# app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-### app.config["MONGO_URI"] = "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-
 mongo = PyMongo(app)
 # print(mongo)
 
@@ -52,12 +49,11 @@ def scrape_all_sites():
     #for MongoClient # db.mars_data.update({}, mars_news_data, upsert=True)
     
     # Redirect back to Landing Page
-    ###return redirect("http://localhost:5000/", code=302)
     return redirect("/", code=302)
     
     ###return "Scraping was successful."
 
 if __name__ == "__main__":
     ##print (scrape_mars.scrape_all_sites())
-    # time.sleep(4)
+    time.sleep(10)
     app.run(debug=True)    
