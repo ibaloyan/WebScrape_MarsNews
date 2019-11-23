@@ -21,7 +21,7 @@ pymongo==3.7.1
 python-dateutil==2.7.3
 pytz==2018.5
 Quandl==3.4.2
-requests==2.19.1
+requests==2.20.0
 six==1.11.0
 urllib3==1.23
 webdriver-manager==2.3.0
