@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, redirect
 from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient # Database connector
+import datetime as dt
 import time
 
 
@@ -54,8 +55,7 @@ def index():
     #for MongoClient# mars_news_data = db.mars_data.find_one()
     
     return render_template("index.html", mars_news_data=mars_news_data)
-    
+
 if __name__ == "__main__":
     ##print (scrape_mars.scrape_all_sites())
-    time.sleep(10)
     app.run(debug=True)    

@@ -6,8 +6,8 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 from selenium import webdriver
-import time
 import datetime as dt
+import time
 
 
 # Initialize return dictionary
@@ -122,7 +122,7 @@ def get_mars_weather(browser):
     # URL of Mars Weather twitter page to be scraped
     mars_twitter_weather_url = 'https://twitter.com/marswxreport?lang=en)'
     browser.visit(mars_twitter_weather_url)
-    time.sleep(4)
+    time.sleep(1)
 
     # Get HTML page with the browser; create BeautifulSoup object; parse with 'html.parser'
     mars_weather_html = browser.html
