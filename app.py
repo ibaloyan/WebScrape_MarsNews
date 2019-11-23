@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 import pymongo
 from pymongo import MongoClient # Database connector
 import datetime as dt
-import time
+#import time
 
 
 # Import my mars web scraping python script
