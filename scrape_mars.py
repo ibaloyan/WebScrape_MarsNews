@@ -9,6 +9,9 @@ from selenium import webdriver
 import datetime as dt
 import time
 
+executable_path = {"executable_path": "chromedriver.exe"}
+browser = Browser("chrome", **executable_path, headless=True)
+time.sleep(2)
 
 # Initialize return dictionary
 mars_news_data = {}
